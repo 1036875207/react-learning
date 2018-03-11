@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+    <script src=" build/browser.min.js"></script>
+
+    <style type="text/css">
+        li{
+            float: left;
+            display: block;
+            padding: 5px;
+        }
+        li:hover{
+            background-color: #D7D7D7;
+        }
+        ul:after{
+            content: "";
+            display: block;
+            height: 0px;
+            width: 0px;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+<script type="text/babel">
+    var arr=["Home","Picture","Game","Passage"];
+    class Hello extends React.Component {
+
+        render(){
+        var list = () => {
+          var res = [];
+          for(var i = 0; i < arr.length; i++) {
+            res.push(<li >{arr[i]}</li>)
+          }
+          return res
+        }
+        return (
+          <ul>{list()}
+          </ul>
+        )
+      }
+    }
+var helloData = 5
+    ReactDOM.render(
+      <Hello />,
+      document.getElementById('root')
+    );
+
+</script>
+</body>
+</html>
